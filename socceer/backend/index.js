@@ -12,10 +12,10 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/soccerDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+});
 
 // bodyparser setup
-app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
 // CORS setup
@@ -30,3 +30,4 @@ app.get('/', (req, res) =>
 app.listen(PORT, () =>
     console.log(`Your soccer server is running on port ${PORT}`)
 );
+

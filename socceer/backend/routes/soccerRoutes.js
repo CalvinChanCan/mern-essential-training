@@ -4,6 +4,7 @@ const routes = (app) => {
     app.route('/players')
         // GET endpoint
         .get(getPlayers)
+
         // POST endpoint
         .post(addNewPlayer);
 }
