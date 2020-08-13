@@ -1,1 +1,3 @@
 /socceer/backend/package-lock.json
+/socceer/backend/node_modules
+/socceer/frontend/node_modules
