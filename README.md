@@ -18,3 +18,7 @@ npm i --save-dev babel-cli babel-preset-env babel-preset-stage-0 && npm i body-p
 
 2. Create `.babelrc` file for configs for babel.
 
+
+```
+npm i cors
+```
