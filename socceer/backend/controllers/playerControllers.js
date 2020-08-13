@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { PlayerSchema } from '../models/playerModel';
+import {PlayerSchema} from '../models/playerModel';
 
 const Player = mongoose.model('Player', PlayerSchema);
 
@@ -15,7 +15,7 @@ export const addNewPlayer = (req, res) => {
 };
 
 export const getPlayers = (req, res) => {
-    Player.find({},(err, Player) => {
+    Player.find({}, (err, Player) => {
         if (err) {
             res.send(err);
         }
@@ -24,7 +24,16 @@ export const getPlayers = (req, res) => {
 };
 
 export const getPlayerWithID = (req, res) => {
-    Player.findById(req.params.PlayerId,(err, Player) => {
+    Player.findById(req.params.PlayerId, (err, Player) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(Player);
+    });
+};
+
+export const UpdatePlayer = (req, res) => {
+    Player.findOneAndUpdate({_id: req.params.PlayerId}, req.body, {new: true}, (err, Player) => {
         if (err) {
             res.send(err);
         }
